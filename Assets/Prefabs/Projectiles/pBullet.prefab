@@ -133,3 +133,4 @@ MonoBehaviour:
   rb: {fileID: 3844575467355073683}
   speed: 15
   timer: 5
+  bullet: {fileID: 1939932197309557773}
