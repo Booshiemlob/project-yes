@@ -38,7 +38,7 @@ public class Player_Movement : MonoBehaviour
 
             // get current position of this GameObject
             Vector3 newPos = transform.position;
-            // set x position to mouse world-space x position
+            // set x and y position to mouse world-space x and y position
             newPos.x = worldPos.x;
             newPos.y = worldPos.y;
             // apply new position
