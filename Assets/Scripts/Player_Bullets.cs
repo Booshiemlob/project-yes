@@ -5,8 +5,10 @@ using UnityEngine;
 public class Player_Bullets : MonoBehaviour
 {
     public Rigidbody2D rb;
-    public float speed = 3;
+    public float speed = 15;
     public float timer = 3f;
+    public GameObject bullet;
+
 
     void Update()
     {
@@ -27,7 +29,7 @@ public class Player_Bullets : MonoBehaviour
     {
         if (hitInfo.CompareTag("Barrier"))
         {
-            Destroy(this);
+            Destroy(bullet);
         }
     }
 }
