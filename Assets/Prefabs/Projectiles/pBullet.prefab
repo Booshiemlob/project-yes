@@ -131,5 +131,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 3844575467355073683}
-  speed: 3
+  speed: 15
   timer: 5

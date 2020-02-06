@@ -20,7 +20,6 @@ public class Player_Shooting : MonoBehaviour
         {
             Shooting();
             timer = 0.1f;
-            Debug.Log("yes");
         }
 
     }
