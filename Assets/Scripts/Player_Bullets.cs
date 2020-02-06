@@ -6,7 +6,8 @@ public class Player_Bullets : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float speed = 3;
-    public float timer = 5f;
+    public float timer = 3f;
+
     void Update()
     {
         timer -= Time.deltaTime;
@@ -16,9 +17,17 @@ public class Player_Bullets : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
+        //Constantly add velocity to move up.
         rb.velocity = transform.up * speed;
+    }
+
+    private void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+        if (hitInfo.CompareTag("Barrier"))
+        {
+            Destroy(this);
+        }
     }
 }
