@@ -12,7 +12,7 @@ public class Player_Movement : MonoBehaviour
 
     void FixedUpdate()
     {
-        Movement();
+        //Movement();
         TouchMovement();
     }
 
