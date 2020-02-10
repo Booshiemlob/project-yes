@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player_Bullets : MonoBehaviour
+public class Bullets : MonoBehaviour
 {
     public Rigidbody2D rb;
     public float speed = 15;
@@ -15,7 +15,7 @@ public class Player_Bullets : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer < 0)
         {
-            Destroy(this);
+            Destroy(bullet);
         }
     }
 

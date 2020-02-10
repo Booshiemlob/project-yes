@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player_Movement : MonoBehaviour
 {
     public float speed = 3.0f;
+    public bool death = false;
     void Start()
     {
 
@@ -14,6 +16,14 @@ public class Player_Movement : MonoBehaviour
     {
         //Movement();
         TouchMovement();
+    }
+    void Update()
+    {
+        if(death == true)
+        {
+            gameObject.SetActive(false);
+            Invoke("Restart", 1);
+        }
     }
 
     void Movement()
@@ -43,6 +53,29 @@ public class Player_Movement : MonoBehaviour
             newPos.y = worldPos.y;
             // apply new position
             transform.position = newPos;
+        }
+    }
+
+    void Restart()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
+    }
+    private void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+        if (hitInfo.CompareTag("Enemy Bullets"))
+        {
+            if (death == false)
+            {
+                death = true;
+            }
+        }
+        if (hitInfo.CompareTag("Enemy"))
+        {
+            if (death == false)
+            {
+                death = true;
+            }
         }
     }
 }
