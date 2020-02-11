@@ -35,9 +35,9 @@ public class Enemy_AI : MonoBehaviour
         shootTime = timeBTWShots;
 
         rb = this.GetComponent<Rigidbody2D>();
-        if (GameObject.FindWithTag("Player") != null)
+        if (GameObject.FindWithTag("p") != null)
         {
-            playerShip = GameObject.FindWithTag("Player").transform;
+            playerShip = GameObject.FindWithTag("p").transform;
         }
        
     }
