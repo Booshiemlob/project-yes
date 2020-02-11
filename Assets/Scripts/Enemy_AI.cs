@@ -14,7 +14,7 @@ public class Enemy_AI : MonoBehaviour
     public bool leftS;
     public bool death = false;
 
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
 
     public GameObject bullet;
     //public GameObject self;
@@ -35,10 +35,10 @@ public class Enemy_AI : MonoBehaviour
         shootTime = timeBTWShots;
 
         rb = this.GetComponent<Rigidbody2D>();
-        if (GameObject.FindWithTag("p") != null)
+        /*if (GameObject.FindWithTag("p") != null)
         {
             playerShip = GameObject.FindWithTag("p").transform;
-        }
+        }*/
        
     }
     void FixedUpdate()

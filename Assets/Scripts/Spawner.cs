@@ -5,35 +5,39 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public Transform[] spawnPoints;
-    public GameObject[] enemies;
+    public GameObject enemies;
     public float spawnTimer = 0.5f;
-    private float spawnTime;
+    private float currentSpawnTime;
     public int randSpawn;
-    public List<GameObject> enemy = new List<GameObject>();
+ //   public List<GameObject> enemy = new List<GameObject>();
 
-    public Enemy_AI eAI;
     void Start()
     {
-        spawnTime = spawnTimer;
+        currentSpawnTime = spawnTimer;
     }
 
 
     void LateUpdate()
     {
-        spawnEnemy();
+        CheckSpawning();
+    }
+
+    void CheckSpawning ()
+    {
+        currentSpawnTime -= Time.deltaTime;
+
+        if (currentSpawnTime <= 0)
+        {
+            spawnEnemy();
+        }
     }
 
     void spawnEnemy()
     {
-        spawnTime -= Time.deltaTime;
-        if(spawnTime < 0)
-        {
-            randSpawn = Random.Range(0, 5);
+        randSpawn = Random.Range(0, spawnPoints.Length-1);
 
-            GameObject Clone = Instantiate(enemies[0], spawnPoints[randSpawn].position, spawnPoints[randSpawn].rotation);
-            spawnTime = spawnTimer;
-            enemy.Add(Clone.GetComponent<GameObject>());
-        }
-
+        Instantiate(enemies, spawnPoints[randSpawn].position, spawnPoints[randSpawn].rotation);
+        currentSpawnTime = spawnTimer;
+  //      enemy.Add(clone);
     }
 }

@@ -154,9 +154,10 @@ MonoBehaviour:
   spawnLoc: 0
   leftS: 0
   death: 0
-  rb: {fileID: 0}
-  bullet: {fileID: 3175238907648770383, guid: 1ba6586c246f742498e5c6d2f5289dff, type: 3}
-  playerShip: {fileID: 0}
+  rb: {fileID: 544504328}
+  bullet: {fileID: 3962236354525211981, guid: 1ba6586c246f742498e5c6d2f5289dff, type: 3}
+  playerShip: {fileID: 3336544122675563238, guid: fa16dc4efe977f1479393beabe25fd7f,
+    type: 3}
   firePoint: {fileID: 6903812550309479119}
   angle2Player: {fileID: 6903812550309479119}
   spawn: {fileID: 0}

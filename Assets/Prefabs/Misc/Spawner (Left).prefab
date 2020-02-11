@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 585896694524073101}
-  - component: {fileID: 585896694524073102}
   - component: {fileID: 585896694524073103}
   m_Layer: 0
   m_Name: Spawner (Left)
@@ -36,22 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
---- !u!114 &585896694524073102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 585896694524073096}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3912848baa703b499f249d2b797ad58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnPoints: []
-  enemies: []
-  spawnTimer: 0
-  randSpawn: 0
 --- !u!114 &585896694524073103
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,9 +53,8 @@ MonoBehaviour:
   - {fileID: 585896694666374727}
   - {fileID: 585896696365927273}
   - {fileID: 585896695722576976}
-  enemies:
-  - {fileID: 8204167345325300766, guid: b33fc2242940e734caf527b8b7ac0fa1, type: 3}
-  spawnTimer: 0.5
+  enemies: {fileID: 8204167345325300766, guid: b33fc2242940e734caf527b8b7ac0fa1, type: 3}
+  spawnTimer: 2
   randSpawn: 0
 --- !u!1 &585896694666374720
 GameObject:
