@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a07d5ec99cf25d84db182b1a16a6bb14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 10
   death: 0
 --- !u!114 &3455416491364881816
 MonoBehaviour:
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pBullet: {fileID: 1939932197309557773, guid: 187e18617e11a234aaf5375abb624f9a, type: 3}
   pBulletSpawn: {fileID: 47810150716562313}
-  timer: 0.1
+  timer: 0.3
 --- !u!50 &1537800564132731284
 Rigidbody2D:
   serializedVersion: 4
