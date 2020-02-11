@@ -52,7 +52,7 @@ public class Player_Movement : MonoBehaviour
             newPos.x = worldPos.x;
             newPos.y = worldPos.y;
             // apply new position
-            transform.position = newPos;
+            transform.position = Vector2.Lerp(transform.position, newPos, speed * Time.deltaTime);
         }
     }
 

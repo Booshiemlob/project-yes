@@ -6,20 +6,21 @@ public class Player_Shooting : MonoBehaviour
 {
     public GameObject pBullet;
     public Transform pBulletSpawn;
-    public float timer = 0.1f;
+    public float timer;
+    private float time2Shoot;
     void Start()
     {
-        
+        time2Shoot = timer;
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
-        if(timer < 0)
+        time2Shoot -= Time.deltaTime;
+        if(time2Shoot < 0)
         {
             Shooting();
-            timer = 0.1f;
+            time2Shoot = timer;
         }
 
     }
