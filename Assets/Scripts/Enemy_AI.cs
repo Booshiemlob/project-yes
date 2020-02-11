@@ -9,7 +9,6 @@ public class Enemy_AI : MonoBehaviour
     public float timeBTWShots = 0.5f;
     private float shootTime;
     public float movePattern = 1f;
-    public float spawnLoc;
 
     public bool leftS;
     public bool death = false;
@@ -23,14 +22,10 @@ public class Enemy_AI : MonoBehaviour
     public Transform firePoint;
     public Transform angle2Player;
 
-    public Spawner spawn;
-
     void Start()
     {
-        spawn = GameObject.Find("Spawner (Right)").GetComponent<Spawner>();
-        spawnLoc = spawn.randSpawn;
         //Chooses a random movement pattern.
-        movementRandomizer();
+        //movePattern = Random.Range(1, 3);
 
         shootTime = timeBTWShots;
 
@@ -39,7 +34,7 @@ public class Enemy_AI : MonoBehaviour
         {
             playerShip = GameObject.FindWithTag("Player").transform;
         }
-       
+        //angle2Player = playerShip;
     }
     void FixedUpdate()
     {
@@ -47,14 +42,6 @@ public class Enemy_AI : MonoBehaviour
         timer -= Time.deltaTime;
         movement1();
         movement2();
-        if (spawnLoc == 0)
-        {
-            leftS = false;
-        }
-        if(spawnLoc == 4)
-        {
-            leftS = true;
-        }
     }
     void Update()
     {
@@ -79,18 +66,19 @@ public class Enemy_AI : MonoBehaviour
             {
                 movePattern = 1.1f;
                 timer = 1.5f;
+                Debug.Log("Change 1");
             }
         }
         if(movePattern == 1.1f)
         {
             if(timer > 0)
             {
-                rb.velocity = Vector2.zero;
+                return;
             }
             else
             {
                 movePattern = 1.2f;
-                timer = 1f;
+                timer = 5;
             }
         }
         if(movePattern == 1.2f)
@@ -99,36 +87,13 @@ public class Enemy_AI : MonoBehaviour
             {
                 if(leftS == true)
                 {
-                    rb.velocity = new Vector2(1, -1) * speed * Time.deltaTime;
+                    rb.velocity = transform.right * speed * Time.deltaTime;
                 }
-                if(leftS == false)
-                {
-                    rb.velocity = new Vector2(-1,-1) * speed * Time.deltaTime;
-                }
-            }            
-            else
-            {
-                movePattern = 1.3f;
-                timer = 1f;
+
             }
-        }
-        if(movePattern == 1.3f)
-        {
-            if(timer > 0)
+            if (timer < 0)
             {
-                if (leftS == true)
-                {
-                    rb.velocity = new Vector2(-1, -1) * speed * Time.deltaTime;
-                }
-                if (leftS == false)
-                {
-                    rb.velocity = new Vector2(1, -1) * speed * Time.deltaTime;
-                }
-            }
-            else
-            {
-                movePattern = 1.2f;
-                timer = 1f;
+                Destroy(gameObject);
             }
         }
     }
@@ -184,27 +149,6 @@ public class Enemy_AI : MonoBehaviour
             {
                 death = true;
             }
-        }
-    }
-
-    void movementRandomizer()
-    {
-        int a = Random.Range(0, 2);
-
-        if(spawnLoc == 0 || spawnLoc == 4)
-        {
-            if (a == 0)
-            {
-                movePattern = 1f;
-            }
-            else
-            {
-                movePattern = 2f;
-            }
-        }
-        else
-        {
-            movePattern = 2f;
         }
     }
 }
