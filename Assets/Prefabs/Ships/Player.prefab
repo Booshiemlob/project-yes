@@ -144,7 +144,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pBullet: {fileID: 1939932197309557773, guid: 187e18617e11a234aaf5375abb624f9a, type: 3}
   pBulletSpawn: {fileID: 47810150716562313}
+<<<<<<< HEAD
   timer: 0.5
+=======
+  timer: 0.3
+>>>>>>> parent of 8872caa... Revert "Spawner + Enemy Update"
 --- !u!50 &1537800564132731284
 Rigidbody2D:
   serializedVersion: 4
