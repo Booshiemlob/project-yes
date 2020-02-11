@@ -84,9 +84,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 3844575467355073683}
-  speed: 15
+  speed: 600
   timer: 5
-  bullet: {fileID: 1939932197309557773}
 --- !u!212 &-762933804084244532
 SpriteRenderer:
   m_ObjectHideFlags: 0
