@@ -31,5 +31,9 @@ public class Bullets : MonoBehaviour
         {
             Destroy(bullet);
         }
+        if (hitInfo.CompareTag("Enemy"))
+        {
+            Destroy(bullet);
+        }
     }
 }
