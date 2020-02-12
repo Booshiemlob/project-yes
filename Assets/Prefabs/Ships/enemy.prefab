@@ -155,6 +155,8 @@ MonoBehaviour:
   leftS: 0
   death: 0
   rb: {fileID: 544504328}
+  score1: {fileID: 8290758246229389321, guid: 8efe24c634a352a428081a36bb14607b, type: 3}
+  score2: 0
   bullet: {fileID: 3962236354525211981, guid: 1ba6586c246f742498e5c6d2f5289dff, type: 3}
   self: {fileID: 8204167345325300766}
   playerShip: {fileID: 3336544122675563238, guid: fa16dc4efe977f1479393beabe25fd7f,

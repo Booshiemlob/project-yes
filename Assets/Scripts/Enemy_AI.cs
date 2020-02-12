@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy_AI : MonoBehaviour
 {
@@ -10,12 +11,11 @@ public class Enemy_AI : MonoBehaviour
     private float shootTime;
     public float movePattern = 1f;
     public float spawnLoc;
-
+    public scoreTracker1 scores;
     public bool leftS;
     public bool death = false;
 
     public Rigidbody2D rb;
-
     public GameObject bullet;
     public GameObject self;
 
@@ -27,6 +27,7 @@ public class Enemy_AI : MonoBehaviour
 
     void Start()
     {
+        scores = GameObject.Find("score1").GetComponent<scoreTracker1>();
         spawn = GameObject.Find("Spawner (Right)").GetComponent<Spawner>();
         spawnLoc = spawn.randSpawn;
         //Chooses a random movement pattern.
@@ -60,6 +61,7 @@ public class Enemy_AI : MonoBehaviour
     {
         if(death == true)
         {
+            ++scores.score2;
             Destroy(gameObject);
         }
 
