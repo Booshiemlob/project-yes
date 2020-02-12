@@ -34,7 +34,7 @@ public class Spawner : MonoBehaviour
 
     void spawnEnemy()
     {
-        randSpawn = Random.Range(0, spawnPoints.Length-1);
+        randSpawn = Random.Range(0, spawnPoints.Length);
 
         Instantiate(enemies, spawnPoints[randSpawn].position, spawnPoints[randSpawn].rotation);
         currentSpawnTime = spawnTimer;

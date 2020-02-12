@@ -14,9 +14,11 @@ public class Enemy_AI : MonoBehaviour
     public scoreTracker1 scores;
     public bool leftS;
     public bool death = false;
+    public int bulletType = 0;
+    public int moveLoop;
 
     public Rigidbody2D rb;
-    public GameObject bullet;
+    public GameObject[] bullet;
     public GameObject self;
 
     public Transform playerShip;
@@ -33,7 +35,7 @@ public class Enemy_AI : MonoBehaviour
         //Chooses a random movement pattern.
         MovementRandomizer();
 
-        shootTime = timeBTWShots;
+        shootTime = 0.5f;
 
         rb = GetComponent<Rigidbody2D>();
         if (GameObject.FindWithTag("Player") != null)
@@ -80,7 +82,7 @@ public class Enemy_AI : MonoBehaviour
             else
             {
                 movePattern = 1.1f;
-                timer = 1.5f;
+                timer = 0.5f;
             }
         }
         if(movePattern == 1.1f)
@@ -101,11 +103,11 @@ public class Enemy_AI : MonoBehaviour
             {
                 if(leftS == true)
                 {
-                    rb.velocity = new Vector2(1, -1) * speed * Time.deltaTime;
+                    rb.velocity = new Vector2(1, -0.3f) * speed * 0.5f * Time.deltaTime;
                 }
                 if(leftS == false)
                 {
-                    rb.velocity = new Vector2(-1,-1) * speed * Time.deltaTime;
+                    rb.velocity = new Vector2(-1,-0.3f) * speed * 0.5f * Time.deltaTime;
                 }
             }            
             else
@@ -120,17 +122,25 @@ public class Enemy_AI : MonoBehaviour
             {
                 if (leftS == true)
                 {
-                    rb.velocity = new Vector2(-1, -1) * speed * Time.deltaTime;
+                    rb.velocity = new Vector2(-1, -0.3f) * speed * 0.5f * Time.deltaTime;
                 }
                 if (leftS == false)
                 {
-                    rb.velocity = new Vector2(1, -1) * speed * Time.deltaTime;
+                    rb.velocity = new Vector2(1, -0.3f) * speed * 0.5f * Time.deltaTime;
                 }
             }
             else
             {
-                movePattern = 1.2f;
                 timer = 1f;
+                moveLoop++;
+                if(moveLoop == 2)
+                {
+                    movePattern = 1.3f;
+                }
+                else
+                {
+                    movePattern = 1.2f;
+                }
             }
         }
     }
@@ -148,7 +158,7 @@ public class Enemy_AI : MonoBehaviour
         shootTime -= Time.deltaTime;
         if(shootTime < 0)
         {
-            Instantiate(bullet, firePoint.position, firePoint.rotation);
+            Instantiate(bullet[bulletType], firePoint.position, firePoint.rotation);
             shootTime = timeBTWShots;
         }
     }
@@ -181,23 +191,20 @@ public class Enemy_AI : MonoBehaviour
         }
         if (hitInfo.CompareTag("Barrier"))
         {
-            Debug.Log("yes");
-            if (death == false)
-            {
-                death = true;
-            }
+            Destroy(gameObject);
         }
     }
 
     void MovementRandomizer()
     {
-        int a = Random.Range(0, 2);
+        int a = Random.Range(0, 3);
 
         if(spawnLoc == 0 || spawnLoc == 4)
         {
-            if (a == 0)
+            if (a != 2)
             {
                 movePattern = 1f;
+                bulletType = 1;
             }
             else
             {

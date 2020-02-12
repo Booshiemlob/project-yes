@@ -5,16 +5,19 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/Final Build/Menu.unity
+    guid: 997d3d3819a1ceb4db4d8cac0f229745
+  - enabled: 1
     path: Assets/Scenes/Final Build/Game.unity
     guid: 26f59987696b9b64083c976502d32807
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Menu.unity
     guid: 35df4e34806209a409976d2a827f8c1f
   - enabled: 0
-    path: Assets/Scenes/Kent's Scene.unity
-    guid: 3759e21f0edc264448dedb2f7ef689b7
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/Kent.unity
     guid: 107d7c9437c208040a46cbf1c9fbe50c
   m_configObjects: {}

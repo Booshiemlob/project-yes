@@ -9,22 +9,21 @@ public class BulletSplit : MonoBehaviour
     public GameObject bullet;
     public Rigidbody2D rb;
     public Transform[] firePoint;
-
+    public bool split;
 
     void Start()
     {
-        splitTime -= Time.deltaTime;
-        if (splitTime < 0)
-        {
-            bulletSplit();
-            Destroy(gameObject);
-        }
+        splitTime = Random.Range(0f, 2f);
     }
-
+    void FixedUpdate()
+    {
+        bulletMove();
+    }
 
     void Update()
     {
-        
+        bulletSplit();
+        splitCheck();
     }
 
     void bulletMove()
@@ -34,7 +33,28 @@ public class BulletSplit : MonoBehaviour
 
     void bulletSplit()
     {
-        Instantiate(Instantiate(bullet, firePoint[0].position, firePoint[0].rotation));
+        splitTime -= Time.deltaTime;
+        if (splitTime < 0)
+        {
+            for(int i = 0; i < firePoint.Length; i++)
+            {
+                Instantiate(bullet, firePoint[i].position, firePoint[i].rotation);
+                Debug.Log(i);
+                if (i == 7)
+                {
+                    split = true;
+                }
+            }
+        }
+
+    }
+
+    void splitCheck()
+    {
+        if(split == true)
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
