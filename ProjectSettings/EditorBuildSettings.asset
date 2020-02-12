@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menu.unity
     guid: 35df4e34806209a409976d2a827f8c1f
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Kent's Scene.unity
     guid: 3759e21f0edc264448dedb2f7ef689b7
   m_configObjects: {}
