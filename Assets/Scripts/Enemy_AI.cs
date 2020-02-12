@@ -14,10 +14,10 @@ public class Enemy_AI : MonoBehaviour
     public bool leftS;
     public bool death = false;
 
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
 
     public GameObject bullet;
-    //public GameObject self;
+    public GameObject self;
 
     public Transform playerShip;
     public Transform firePoint;
@@ -30,23 +30,23 @@ public class Enemy_AI : MonoBehaviour
         spawn = GameObject.Find("Spawner (Right)").GetComponent<Spawner>();
         spawnLoc = spawn.randSpawn;
         //Chooses a random movement pattern.
-        movementRandomizer();
+        MovementRandomizer();
 
         shootTime = timeBTWShots;
 
-        rb = this.GetComponent<Rigidbody2D>();
-        /*if (GameObject.FindWithTag("p") != null)
+        rb = GetComponent<Rigidbody2D>();
+        if (GameObject.FindWithTag("Player") != null)
         {
-            playerShip = GameObject.FindWithTag("p").transform;
-        }*/
+            playerShip = GameObject.FindWithTag("Player").transform;
+        }
        
     }
     void FixedUpdate()
     {
-        findPlayerAngle();
+        FindPlayerAngle();
         timer -= Time.deltaTime;
-        movement1();
-        movement2();
+        Movement1();
+        Movement2();
         if (spawnLoc == 0)
         {
             leftS = false;
@@ -63,11 +63,11 @@ public class Enemy_AI : MonoBehaviour
             Destroy(gameObject);
         }
 
-        shootTimer();
+        ShootTimer();
     }
 
     //Enemy moves down, pauses then to the left
-    void movement1()
+    void Movement1()
     {
         if(movePattern == 1f)
         {
@@ -133,7 +133,7 @@ public class Enemy_AI : MonoBehaviour
         }
     }
 
-    void movement2()
+    void Movement2()
     {
         if(movePattern == 2)
         {
@@ -141,7 +141,7 @@ public class Enemy_AI : MonoBehaviour
         }
     }
 
-    void shootTimer()
+    void ShootTimer()
     {
         shootTime -= Time.deltaTime;
         if(shootTime < 0)
@@ -151,9 +151,9 @@ public class Enemy_AI : MonoBehaviour
         }
     }
 
-    void findPlayerAngle()
+    void FindPlayerAngle()
     {
-        if (GameObject.FindWithTag("Player") != null)
+        if (GameObject.FindGameObjectWithTag("Player") != null)
         {
             var addAngle = 270;
             var dir = playerShip.position - transform.position;
@@ -187,7 +187,7 @@ public class Enemy_AI : MonoBehaviour
         }
     }
 
-    void movementRandomizer()
+    void MovementRandomizer()
     {
         int a = Random.Range(0, 2);
 

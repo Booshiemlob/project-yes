@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Kent's Scene.unity
     guid: 3759e21f0edc264448dedb2f7ef689b7
+  - enabled: 1
+    path: Assets/Scenes/Kent.unity
+    guid: 107d7c9437c208040a46cbf1c9fbe50c
   m_configObjects: {}

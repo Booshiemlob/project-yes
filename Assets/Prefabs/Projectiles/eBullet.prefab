@@ -7,6 +7,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -419962590500202060, guid: 187e18617e11a234aaf5375abb624f9a,
+        type: 3}
+      propertyPath: pBullet
+      value: 
+      objectReference: {fileID: 3962236354525211981}
+    - target: {fileID: -419962590500202060, guid: 187e18617e11a234aaf5375abb624f9a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -419962590500202060, guid: 187e18617e11a234aaf5375abb624f9a,
+        type: 3}
+      propertyPath: shootInterval
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1939932197309557773, guid: 187e18617e11a234aaf5375abb624f9a,
         type: 3}
       propertyPath: m_Name
@@ -97,6 +112,11 @@ PrefabInstance:
       propertyPath: speed
       value: 350
       objectReference: {fileID: 0}
+    - target: {fileID: 6693661822841167655, guid: 187e18617e11a234aaf5375abb624f9a,
+        type: 3}
+      propertyPath: timer
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: -762933804084244532, guid: 187e18617e11a234aaf5375abb624f9a,
         type: 3}
       propertyPath: m_Sprite
@@ -105,3 +125,9 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 187e18617e11a234aaf5375abb624f9a, type: 3}
+--- !u!1 &3962236354525211981 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1939932197309557773, guid: 187e18617e11a234aaf5375abb624f9a,
+    type: 3}
+  m_PrefabInstance: {fileID: 3175238907648770368}
+  m_PrefabAsset: {fileID: 0}

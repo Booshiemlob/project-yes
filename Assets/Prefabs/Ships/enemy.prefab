@@ -147,14 +147,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aac825d67db805642ac75b6779d605c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 100
+  speed: 200
   timer: 1
-  timeBTWShots: 1
-  movePattern: 1
-  spawnLoc: 0
+  timeBTWShots: 0.8
+  movePattern: 2
+  spawnLoc: 1
   leftS: 0
   death: 0
+  rb: {fileID: 544504328}
   bullet: {fileID: 3962236354525211981, guid: 1ba6586c246f742498e5c6d2f5289dff, type: 3}
+  self: {fileID: 8204167345325300766}
   playerShip: {fileID: 3336544122675563238, guid: fa16dc4efe977f1479393beabe25fd7f,
     type: 3}
   firePoint: {fileID: 6903812550309479119}

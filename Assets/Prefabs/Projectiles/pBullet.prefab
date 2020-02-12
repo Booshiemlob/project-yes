@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -4038381292497427610}
   - component: {fileID: 6693661822841167655}
   - component: {fileID: -762933804084244532}
+  - component: {fileID: -419962590500202060}
   m_Layer: 0
   m_Name: pBullet
   m_TagString: Player Bullets
@@ -85,7 +86,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 3844575467355073683}
   speed: 600
-  timer: 5
+  timer: 4
 --- !u!212 &-762933804084244532
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -123,7 +124,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 1220f6b728227704282f4939c10b101a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -135,3 +136,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-419962590500202060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1939932197309557773}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb47a665bca31914eb3ae65d867a905c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedMult: 1
+  rangeMult: 1
+  pBullet: {fileID: 3962236354525211981, guid: 1ba6586c246f742498e5c6d2f5289dff, type: 3}
+  shootInterval: 1

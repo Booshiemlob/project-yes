@@ -54,7 +54,7 @@ MonoBehaviour:
   - {fileID: 585896696365927273}
   - {fileID: 585896695722576976}
   enemies: {fileID: 8204167345325300766, guid: b33fc2242940e734caf527b8b7ac0fa1, type: 3}
-  spawnTimer: 1
+  spawnTimer: 0.3
   randSpawn: 0
 --- !u!1 &585896694666374720
 GameObject:
