@@ -53,7 +53,7 @@ public class BulletSplit : MonoBehaviour
     {
         if(split == true)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
@@ -61,11 +61,11 @@ public class BulletSplit : MonoBehaviour
     {
         if (hitInfo.CompareTag("Barrier"))
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
         if (hitInfo.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }

@@ -708,11 +708,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3336544122675563037, guid: fa16dc4efe977f1479393beabe25fd7f,
-        type: 3}
-      propertyPath: m_Name
-      value: Player 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3336544122675563238, guid: fa16dc4efe977f1479393beabe25fd7f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -767,6 +762,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3336544122675563037, guid: fa16dc4efe977f1479393beabe25fd7f,
+        type: 3}
+      propertyPath: m_Name
+      value: Player 1
       objectReference: {fileID: 0}
     - target: {fileID: 3336544122675563239, guid: fa16dc4efe977f1479393beabe25fd7f,
         type: 3}
@@ -867,6 +867,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1290422484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1290422486}
+  - component: {fileID: 1290422485}
+  m_Layer: 0
+  m_Name: ObjectPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1290422485
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290422484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bd44287b7c8d134590996214a9861b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  itemsToPool:
+  - amountToPool: 20
+    objectToPool: {fileID: 8204167345325300766, guid: b33fc2242940e734caf527b8b7ac0fa1,
+      type: 3}
+    shouldExpand: 0
+  - amountToPool: 30
+    objectToPool: {fileID: 3962236354525211981, guid: 1ba6586c246f742498e5c6d2f5289dff,
+      type: 3}
+    shouldExpand: 0
+  - amountToPool: 20
+    objectToPool: {fileID: 7267309279449683518, guid: 072368b9fae6ed640a6dc63638dc0b85,
+      type: 3}
+    shouldExpand: 0
+  - amountToPool: 10
+    objectToPool: {fileID: 1939932197309557773, guid: 187e18617e11a234aaf5375abb624f9a,
+      type: 3}
+    shouldExpand: 0
+  - amountToPool: 50
+    objectToPool: {fileID: 5633123177436848639, guid: 5af109316fe33b34da70ae03a2bfdbf9,
+      type: 3}
+    shouldExpand: 0
+--- !u!4 &1290422486
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290422484}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.1865797, y: 0.060596332, z: -2.2207031}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1417021131
 PrefabInstance:
