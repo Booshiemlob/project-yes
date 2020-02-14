@@ -34,6 +34,13 @@ public class donotdestroyonstart : MonoBehaviour
                 Debug.Log("ya");
                 break;
         }
+    }
 
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.index == 0)
+        {
+            Destroy(gameObject);
+        }
     }
 }
