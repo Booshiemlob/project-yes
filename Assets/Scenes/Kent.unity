@@ -610,6 +610,11 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3336544122675563232, guid: fa16dc4efe977f1479393beabe25fd7f,
+        type: 3}
+      propertyPath: gameOver
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3336544122675563233, guid: fa16dc4efe977f1479393beabe25fd7f,
         type: 3}
       propertyPath: timer
@@ -619,11 +624,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Constraints
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3336544122675563232, guid: fa16dc4efe977f1479393beabe25fd7f,
-        type: 3}
-      propertyPath: gameOver
-      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1609767557297665426, guid: fa16dc4efe977f1479393beabe25fd7f,
         type: 3}
@@ -937,7 +937,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1765125845
+--- !u!114 &1765125846
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

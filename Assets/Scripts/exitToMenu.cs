@@ -12,9 +12,10 @@ public class exitToMenu : MonoBehaviour {
         myButton.onClick.AddListener(Button);
     }
 
+
     void Button()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(0);
     }
 
 
