@@ -14,7 +14,7 @@ public class exitToMenu : MonoBehaviour {
 
     void Button()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
     }
 
 

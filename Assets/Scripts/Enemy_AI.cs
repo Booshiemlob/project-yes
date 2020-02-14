@@ -11,7 +11,7 @@ public class Enemy_AI : MonoBehaviour
     private float shootTime;
     public float movePattern = 1f;
     public float spawnLoc;
-    public scoreTracker1 scores;
+    public ScoreTracker1 scores;
     public bool leftS;
     public bool death = false;
     public int bulletType = 0;
@@ -29,7 +29,8 @@ public class Enemy_AI : MonoBehaviour
 
     void Start()
     {
-        scores = GameObject.Find("score1").GetComponent<scoreTracker1>();
+
+        scores = GameObject.Find("score1").GetComponent<ScoreTracker1>();
         spawn = GameObject.Find("Spawner (Right)").GetComponent<Spawner>();
         spawnLoc = spawn.randSpawn;
         //Chooses a random movement pattern.

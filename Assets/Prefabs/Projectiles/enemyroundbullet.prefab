@@ -351,7 +351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splitTime: 2
-  speed: 40
+  speed: 200
   bullet: {fileID: 5633123177436848639, guid: 5af109316fe33b34da70ae03a2bfdbf9, type: 3}
   rb: {fileID: 8355763480384900062}
   firePoint:

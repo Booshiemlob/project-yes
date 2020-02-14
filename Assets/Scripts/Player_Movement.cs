@@ -7,6 +7,7 @@ public class Player_Movement : MonoBehaviour
 {
     public float speed = 3.0f;
     public bool death = false;
+    public GameOverScript gameOver;
     void Start()
     {
 
@@ -22,7 +23,7 @@ public class Player_Movement : MonoBehaviour
         if(death == true)
         {
             gameObject.SetActive(false);
-            Invoke("Restart", 1);
+            gameOver.GameOverscreen();
         }
     }
 
