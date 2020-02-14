@@ -65,7 +65,7 @@ public class Enemy_AI : MonoBehaviour
         if(death == true)
         {
             ++scores.score2;
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
 
         ShootTimer();
@@ -159,14 +159,7 @@ public class Enemy_AI : MonoBehaviour
         shootTime -= Time.deltaTime;
         if(shootTime < 0)
         {
-            GameObject bullet = ObjectPool.SharedInstance.GetPooledObject("Enemy Bullets");
-            if (bullet != null)
-            {
-                bullet.transform.position = firePoint.transform.position;
-                bullet.transform.rotation = firePoint.transform.rotation;
-                bullet.SetActive(true);
-            }
-            //Instantiate(bullet[bulletType], firePoint.position, firePoint.rotation);
+            Instantiate(bullet[bulletType], firePoint.position, firePoint.rotation);
             shootTime = timeBTWShots;
         }
     }
@@ -199,7 +192,7 @@ public class Enemy_AI : MonoBehaviour
         }
         if (hitInfo.CompareTag("Barrier"))
         {
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 

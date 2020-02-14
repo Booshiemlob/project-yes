@@ -13,7 +13,7 @@ public class Bullets : MonoBehaviour
         timer -= Time.deltaTime;
         if (timer < 0)
         {
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 
@@ -27,11 +27,11 @@ public class Bullets : MonoBehaviour
     {
         if (hitInfo.CompareTag("Barrier"))
         {
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
         if (hitInfo.CompareTag("Enemy"))
         {
-            gameObject.SetActive(false);
+            Destroy(gameObject);
         }
     }
 }
