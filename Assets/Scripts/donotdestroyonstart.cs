@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class donotdestroyonstart : MonoBehaviour
+public class Donotdestroyonstart : MonoBehaviour
 {
 
     // Start is called before the first frame update
@@ -34,11 +34,13 @@ public class donotdestroyonstart : MonoBehaviour
                 Debug.Log("ya");
                 break;
         }
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.index == 0)
+        print("Ya");
+        if (scene.buildIndex == 0)
         {
             Destroy(gameObject);
         }
