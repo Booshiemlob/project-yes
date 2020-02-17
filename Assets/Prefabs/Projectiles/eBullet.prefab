@@ -7,21 +7,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -419962590500202060, guid: 187e18617e11a234aaf5375abb624f9a,
-        type: 3}
-      propertyPath: pBullet
-      value: 
-      objectReference: {fileID: 3962236354525211981}
-    - target: {fileID: -419962590500202060, guid: 187e18617e11a234aaf5375abb624f9a,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -419962590500202060, guid: 187e18617e11a234aaf5375abb624f9a,
-        type: 3}
-      propertyPath: shootInterval
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 1939932197309557773, guid: 187e18617e11a234aaf5375abb624f9a,
         type: 3}
       propertyPath: m_Name
@@ -143,6 +128,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 98a58a6f60bcf9c4db3f14d692477b92,
         type: 3}
+    - target: {fileID: -419962590500202060, guid: 187e18617e11a234aaf5375abb624f9a,
+        type: 3}
+      propertyPath: pBullet
+      value: 
+      objectReference: {fileID: 3962236354525211981}
+    - target: {fileID: -419962590500202060, guid: 187e18617e11a234aaf5375abb624f9a,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -419962590500202060, guid: 187e18617e11a234aaf5375abb624f9a,
+        type: 3}
+      propertyPath: shootInterval
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 187e18617e11a234aaf5375abb624f9a, type: 3}
 --- !u!1 &3962236354525211981 stripped

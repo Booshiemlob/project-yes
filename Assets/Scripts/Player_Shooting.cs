@@ -26,6 +26,12 @@ public class Player_Shooting : MonoBehaviour
     }
     void Shooting()
     {
-        GameObject clone = (GameObject)Instantiate(pBullet, pBulletSpawn.position, pBulletSpawn.rotation) ;
+        GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("Player Bullets");
+        if (bullet != null)
+        {
+            bullet.transform.position = pBulletSpawn.transform.position;
+            bullet.transform.rotation = pBulletSpawn.transform.rotation;
+            bullet.SetActive(true);
+        }
     }
 }

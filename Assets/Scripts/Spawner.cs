@@ -29,14 +29,20 @@ public class Spawner : MonoBehaviour
         if (currentSpawnTime <= 0)
         {
             spawnEnemy();
+            Debug.Log("spawner help");
         }
     }
 
     void spawnEnemy()
     {
         randSpawn = Random.Range(0, spawnPoints.Length);
-
-        Instantiate(enemies, spawnPoints[randSpawn].position, spawnPoints[randSpawn].rotation);
+        GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("Enemy");
+        if (bullet != null)
+        {
+            bullet.transform.position = spawnPoints[randSpawn].transform.position;
+            bullet.transform.rotation = spawnPoints[randSpawn].transform.rotation;
+            bullet.SetActive(true);
+        }
         currentSpawnTime = spawnTimer;
   //      enemy.Add(clone);
     }

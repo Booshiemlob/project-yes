@@ -69,6 +69,20 @@ public class Player_Movement : MonoBehaviour
             {
                 death = true;
             }
+        }       
+        if (hitInfo.CompareTag("Enemy Bullets 1"))
+        {
+            if (death == false)
+            {
+                death = true;
+            }
+        }      
+        if (hitInfo.CompareTag("Enemy Bullets 2"))
+        {
+            if (death == false)
+            {
+                death = true;
+            }
         }
         if (hitInfo.CompareTag("Enemy"))
         {

@@ -11,9 +11,10 @@ public class BulletSplit : MonoBehaviour
     public Transform[] firePoint;
     public bool split;
 
-    void Start()
+    void OnEnable()
     {
         splitTime = Random.Range(0f, 2f);
+        split = false;
     }
     void FixedUpdate()
     {
@@ -38,8 +39,13 @@ public class BulletSplit : MonoBehaviour
         {
             for(int i = 0; i < firePoint.Length; i++)
             {
-                Instantiate(bullet, firePoint[i].position, firePoint[i].rotation);
-                Debug.Log(i);
+                GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("Enemy Bullets 2");
+                if (bullet != null)
+                {
+                    bullet.transform.position = firePoint[i].transform.position;
+                    bullet.transform.rotation = firePoint[i].transform.rotation;
+                    bullet.SetActive(true);
+                }
                 if (i == 7)
                 {
                     split = true;
@@ -53,7 +59,7 @@ public class BulletSplit : MonoBehaviour
     {
         if(split == true)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
@@ -61,11 +67,13 @@ public class BulletSplit : MonoBehaviour
     {
         if (hitInfo.CompareTag("Barrier"))
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+
         }
         if (hitInfo.CompareTag("Player"))
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+
         }
     }
 }

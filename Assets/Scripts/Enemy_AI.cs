@@ -18,7 +18,7 @@ public class Enemy_AI : MonoBehaviour
     public int moveLoop;
 
     public Rigidbody2D rb;
-    public GameObject[] bullet;
+    //public GameObject[] bullet;
     public GameObject self;
 
     public Transform playerShip;
@@ -27,7 +27,7 @@ public class Enemy_AI : MonoBehaviour
 
     public Spawner spawn;
 
-    void Start()
+    void OnEnable()
     {
 
         scores = GameObject.Find("score1").GetComponent<ScoreTracker1>();
@@ -65,7 +65,7 @@ public class Enemy_AI : MonoBehaviour
         if(death == true)
         {
             ++scores.score2;
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
 
         ShootTimer();
@@ -159,7 +159,27 @@ public class Enemy_AI : MonoBehaviour
         shootTime -= Time.deltaTime;
         if(shootTime < 0)
         {
-            Instantiate(bullet[bulletType], firePoint.position, firePoint.rotation);
+            if (movePattern == 2)
+            {
+                GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("Enemy Bullets");
+                if (bullet != null)
+                {
+                    bullet.transform.position = firePoint.transform.position;
+                    bullet.transform.rotation = firePoint.transform.rotation;
+                    bullet.SetActive(true);
+                }
+            }
+            else
+            {
+                GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("Enemy Bullets 1");
+                if (bullet != null)
+                {
+                    bullet.transform.position = firePoint.transform.position;
+                    bullet.transform.rotation = firePoint.transform.rotation;
+                    bullet.SetActive(true);
+                }
+            }
+
             shootTime = timeBTWShots;
         }
     }
@@ -192,7 +212,7 @@ public class Enemy_AI : MonoBehaviour
         }
         if (hitInfo.CompareTag("Barrier"))
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 

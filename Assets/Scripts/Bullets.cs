@@ -8,12 +8,16 @@ public class Bullets : MonoBehaviour
     public float speed = 15;
     public float timer = 3f;
 
+    void OnEnable()
+    {
+        timer = 3f;
+    }
     void Update()
     {
         timer -= Time.deltaTime;
         if (timer < 0)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 
@@ -27,11 +31,11 @@ public class Bullets : MonoBehaviour
     {
         if (hitInfo.CompareTag("Barrier"))
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
         if (hitInfo.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
     }
 }
