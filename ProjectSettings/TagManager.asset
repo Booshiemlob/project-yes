@@ -9,6 +9,10 @@ TagManager:
   - Enemy
   - Enemy Bullets
   - p
+  - Enemy Bullets 1
+  - Enemy Bullets 2
+  - MilanHead Bullet
+  - MSplit
   layers:
   - Default
   - TransparentFX

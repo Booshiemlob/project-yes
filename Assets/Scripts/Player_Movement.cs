@@ -91,5 +91,19 @@ public class Player_Movement : MonoBehaviour
                 death = true;
             }
         }
+        if (hitInfo.CompareTag("MilanHead Bullet"))
+        {
+            if (death == false)
+            {
+                death = true;
+            }
+        }
+        if (hitInfo.CompareTag("MSplit"))
+        {
+            if (death == false)
+            {
+                death = true;
+            }
+        }
     }
 }

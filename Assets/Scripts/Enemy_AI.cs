@@ -18,7 +18,6 @@ public class Enemy_AI : MonoBehaviour
     public int moveLoop;
 
     public Rigidbody2D rb;
-    //public GameObject[] bullet;
     public GameObject self;
 
     public Transform playerShip;

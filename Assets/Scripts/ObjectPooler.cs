@@ -24,7 +24,6 @@ public class ObjectPooler : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("help");
         pooledObjects = new List<GameObject>();
         foreach (ObjectPoolItem item in itemsToPool)
         {

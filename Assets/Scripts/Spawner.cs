@@ -5,14 +5,18 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     public Transform[] spawnPoints;
-    public GameObject enemies;
     public float spawnTimer = 0.5f;
     private float currentSpawnTime;
     public int randSpawn;
- //   public List<GameObject> enemy = new List<GameObject>();
+    public GameObject MilanBoss;
+
+    public scoreTracker1 scores;
+
+    //   public List<GameObject> enemy = new List<GameObject>();
 
     void Start()
     {
+        scores = GameObject.Find("score1").GetComponent<scoreTracker1>();
         currentSpawnTime = spawnTimer;
     }
 
@@ -20,7 +24,19 @@ public class Spawner : MonoBehaviour
     void LateUpdate()
     {
 
-        CheckSpawning();
+        MilanCheck();
+    }
+
+    void MilanCheck()
+    {
+        if (scores.score2 < 420)
+        {
+            CheckSpawning();
+        }
+        else
+        {
+            Instantiate(MilanBoss, spawnPoints[2].position, spawnPoints[2].rotation);
+        }
     }
 
     void CheckSpawning ()
@@ -30,7 +46,6 @@ public class Spawner : MonoBehaviour
         if (currentSpawnTime <= 0)
         {
             spawnEnemy();
-            Debug.Log("spawner help");
         }
     }
 

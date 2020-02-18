@@ -10,6 +10,7 @@ public class BulletSplit : MonoBehaviour
     public Rigidbody2D rb;
     public Transform[] firePoint;
     public bool split;
+    public bool milanFactor;
 
     void OnEnable()
     {
@@ -37,18 +38,38 @@ public class BulletSplit : MonoBehaviour
         splitTime -= Time.deltaTime;
         if (splitTime < 0)
         {
-            for(int i = 0; i < firePoint.Length; i++)
+            if(milanFactor == false)
             {
-                GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("Enemy Bullets 2");
-                if (bullet != null)
+                for (int i = 0; i < firePoint.Length; i++)
                 {
-                    bullet.transform.position = firePoint[i].transform.position;
-                    bullet.transform.rotation = firePoint[i].transform.rotation;
-                    bullet.SetActive(true);
+                    GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("Enemy Bullets 2");
+                    if (bullet != null)
+                    {
+                        bullet.transform.position = firePoint[i].transform.position;
+                        bullet.transform.rotation = firePoint[i].transform.rotation;
+                        bullet.SetActive(true);
+                    }
+                    if (i == 7)
+                    {
+                        split = true;
+                    }
                 }
-                if (i == 7)
+            }
+            if( milanFactor == true)
+            {
+                for (int i = 0; i < firePoint.Length; i++)
                 {
-                    split = true;
+                    GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("MilanHead Bullet");
+                    if (bullet != null)
+                    {
+                        bullet.transform.position = firePoint[i].transform.position;
+                        bullet.transform.rotation = firePoint[i].transform.rotation;
+                        bullet.SetActive(true);
+                    }
+                    if (i == 7)
+                    {
+                        split = true;
+                    }
                 }
             }
         }
