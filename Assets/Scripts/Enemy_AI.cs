@@ -29,6 +29,7 @@ public class Enemy_AI : MonoBehaviour
 
     void OnEnable()
     {
+        timer = 1f;
         death = false;
         scores = GameObject.Find("score1").GetComponent<scoreTracker1>();
         spawn = GameObject.Find("Spawner (Right)").GetComponent<Spawner>();

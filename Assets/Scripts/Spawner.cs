@@ -19,6 +19,7 @@ public class Spawner : MonoBehaviour
 
     void LateUpdate()
     {
+
         CheckSpawning();
     }
 
