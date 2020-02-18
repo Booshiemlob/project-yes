@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreTracker1 : MonoBehaviour
+public class scoreTracker1 : MonoBehaviour
 {
     public Text scoreText;
     public int score2 = 0;
