@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 4567518921568321975}
   - component: {fileID: 4567518921568321968}
   - component: {fileID: 4567518921568321969}
+  - component: {fileID: 6516812413238628810}
   m_Layer: 9
   m_Name: milan
   m_TagString: Enemy
@@ -152,15 +153,90 @@ MonoBehaviour:
   timer: 0.5
   rb: {fileID: 4567518921568321968}
   speed: 15
-  randAngle: 0
+  randBullet: 0
   shootPos: 0
-  timeBTWShots: 0.1
+  timeBTWShots: 0.3
+  shootTime: 0
+  health: 212
   playerShip: {fileID: 4400031332220744167, guid: 576d9161a7b290f46beb899df79073b9,
     type: 3}
   firePoint:
   - {fileID: 5645545737365186595}
   - {fileID: 4937266711028131412}
   angle2Player: {fileID: 1140300836530345528}
+--- !u!60 &6516812413238628810
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4567518921568321970}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3, y: 3}
+    newSize: {x: 3, y: 3}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.69, y: -1}
+      - {x: 0.82, y: -0.82}
+      - {x: 0.87, y: -0.71999997}
+      - {x: 0.87, y: -0.28}
+      - {x: 0.90999997, y: -0.29}
+      - {x: 0.96999997, y: -0.24}
+      - {x: 1.02, y: 0.14}
+      - {x: 1.02, y: 0.39}
+      - {x: 0.98999995, y: 0.42999998}
+      - {x: 0.90999997, y: 0.48}
+      - {x: 0.88, y: 0.63}
+      - {x: 0.83, y: 0.65}
+      - {x: 0.82, y: 0.82}
+      - {x: 0.81, y: 0.84999996}
+      - {x: 0.65999997, y: 0.97999996}
+      - {x: 0.48999998, y: 1.15}
+      - {x: 0.29, y: 1.26}
+      - {x: 0.11, y: 1.3}
+      - {x: -0.19999999, y: 1.3}
+      - {x: -0.22, y: 1.28}
+      - {x: -0.31, y: 1.26}
+      - {x: -0.32999998, y: 1.2099999}
+      - {x: -0.41, y: 1.2099999}
+      - {x: -0.42999998, y: 1.15}
+      - {x: -0.52, y: 1.15}
+      - {x: -0.61, y: 1.09}
+      - {x: -0.72999996, y: 0.98999995}
+      - {x: -0.78999996, y: 0.9}
+      - {x: -0.84, y: 0.82}
+      - {x: -0.94, y: 0.57}
+      - {x: -0.94, y: 0.14999999}
+      - {x: -0.9, y: 0.13}
+      - {x: -0.9, y: -0.17}
+      - {x: -0.84999996, y: -0.19}
+      - {x: -0.84, y: -0.45999998}
+      - {x: -0.82, y: -0.48}
+      - {x: -0.79999995, y: -0.57}
+      - {x: -0.75, y: -0.59}
+      - {x: -0.74, y: -0.71999997}
+      - {x: -0.7, y: -0.78}
+      - {x: -0.59, y: -0.88}
+      - {x: -0.53999996, y: -0.97999996}
+      - {x: -0.31, y: -1.1999999}
+      - {x: -0.19999999, y: -1.24}
+      - {x: 0.38, y: -1.24}
+      - {x: 0.39999998, y: -1.22}
+      - {x: 0.48999998, y: -1.15}
+      - {x: 0.64, y: -1.05}
 --- !u!1 &4874592955245888923
 GameObject:
   m_ObjectHideFlags: 0

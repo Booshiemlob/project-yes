@@ -14,6 +14,7 @@ public class milanBoss : MonoBehaviour
     public int shootPos = 0;
     public float timeBTWShots = 0.1f;
     public float shootTime;
+    public int health = 212;
 
     public Transform playerShip;
     public Transform[] firePoint;
@@ -225,6 +226,25 @@ public class milanBoss : MonoBehaviour
             shootPos = 0;
         }
 
+    }
+    private void OnTriggerEnter2D(Collider2D hitInfo)
+    {
+        if (hitInfo.CompareTag("Player Bullets"))
+        {
+            health -= 1;
+        }
+        if (hitInfo.CompareTag("Player"))
+        {
+            health -= 1;
+        }
 
+    }
+
+    void HealthCheck()
+    {
+        if(health < 0)
+        {
+            Destroy(this);
+        }
     }
 }

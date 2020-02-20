@@ -12,7 +12,6 @@ public class Spawner : MonoBehaviour
 
     public scoreTracker1 scores;
 
-    //   public List<GameObject> enemy = new List<GameObject>();
 
     void Start()
     {
@@ -23,17 +22,13 @@ public class Spawner : MonoBehaviour
 
     void LateUpdate()
     {
-
+        CheckSpawning();
         MilanCheck();
     }
 
     void MilanCheck()
     {
-        if (scores.score2 < 420)
-        {
-            CheckSpawning();
-        }
-        else
+        if (scores.score2 > 212)
         {
             Instantiate(MilanBoss, spawnPoints[2].position, spawnPoints[2].rotation);
         }
@@ -60,6 +55,5 @@ public class Spawner : MonoBehaviour
             bullet.SetActive(true);
         }
         currentSpawnTime = spawnTimer;
-  //      enemy.Add(clone);
     }
 }
