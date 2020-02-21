@@ -19,12 +19,14 @@ public class ObjectPooler : MonoBehaviour
 
     void Awake()
     {
+        //Makes this script public so any script can reference this script.
         SharedInstance = this;
     }
 
     void Start()
     {
         pooledObjects = new List<GameObject>();
+        //For each object in itemsToPool instatiates them, sets them inactive and adds them to the pooledObjects list.
         foreach (ObjectPoolItem item in itemsToPool)
         {
             for (int i = 0; i < item.amountToPool; i++)
@@ -37,25 +39,23 @@ public class ObjectPooler : MonoBehaviour
     }
 
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public GameObject GetPooledObject(string tag)
     {
+
         for (int i = 0; i < pooledObjects.Count; i++)
         {
+            //Checks if there is enough objects inactive in the scene.
             if (!pooledObjects[i].activeInHierarchy && pooledObjects[i].tag == tag)
             {
                 return pooledObjects[i];
             }
         }
+
         foreach (ObjectPoolItem item in itemsToPool)
         {
             if (item.objectToPool.tag == tag)
             {
+                //If there is not enough items to use it will create more.
                 if (item.shouldExpand)
                 {
                     GameObject obj = (GameObject)Instantiate(item.objectToPool);

@@ -16,8 +16,10 @@ public class Player_Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Reduces time in real life time.
         time2Shoot -= Time.deltaTime;
-        if(time2Shoot < 0)
+        //When the timer reaches/goes below zero calls the shoot function
+        if (time2Shoot < 0)
         {
             Shooting();
             time2Shoot = timer;
@@ -26,6 +28,7 @@ public class Player_Shooting : MonoBehaviour
     }
     void Shooting()
     {
+        //Gets an enemy that is inactive in the scene and spawns the player's fire point.
         GameObject bullet = ObjectPooler.SharedInstance.GetPooledObject("Player Bullets");
         if (bullet != null)
         {
