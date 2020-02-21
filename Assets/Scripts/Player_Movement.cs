@@ -58,11 +58,13 @@ public class Player_Movement : MonoBehaviour
 
     void Restart()
     {
+        //Reloads the game scene
         Scene scene = SceneManager.GetActiveScene();
         SceneManager.LoadScene(scene.name);
     }
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
+        //When the player is hit by anything with the following tags, kills the player.
         if (hitInfo.CompareTag("Enemy Bullets"))
         {
             if (death == false)

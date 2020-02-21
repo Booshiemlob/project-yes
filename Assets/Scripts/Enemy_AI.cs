@@ -28,6 +28,7 @@ public class Enemy_AI : MonoBehaviour
 
     void OnEnable()
     {
+        //When the enemy becomes active, resets the enemy state.
         timer = 1f;
         death = false;
         scores = GameObject.Find("score1").GetComponent<scoreTracker1>();
@@ -51,6 +52,7 @@ public class Enemy_AI : MonoBehaviour
         timer -= Time.deltaTime;
         Movement1();
         Movement2();
+        //Determines if it had spawn on the very left spawn point or not.
         if (spawnLoc == 0)
         {
             leftS = false;
@@ -64,6 +66,7 @@ public class Enemy_AI : MonoBehaviour
     {
         if(death == true)
         {
+            //Increases the score by 1 and sets it inactive on death.
             ++scores.score2;
             gameObject.SetActive(false);
         }
@@ -76,12 +79,14 @@ public class Enemy_AI : MonoBehaviour
     {
         if(movePattern == 1f)
         {
+            //If the timer is above 0, moves the enemy ship down.
             if(timer > 0)
             {
                 rb.velocity = transform.up * speed *Time.deltaTime;
             }
             else
             {
+
                 movePattern = 1.1f;
                 timer = 1f;
             }
@@ -94,6 +99,7 @@ public class Enemy_AI : MonoBehaviour
             }
             else
             {
+                //Changes the movement to the next stage and resets the timer.
                 movePattern = 1.2f;
                 timer = 0.8f;
             }
@@ -113,6 +119,7 @@ public class Enemy_AI : MonoBehaviour
             }            
             else
             {
+                //Changes the movement to the next stage and resets the timer.
                 movePattern = 1.3f;
                 timer = 1f;
             }
@@ -132,6 +139,7 @@ public class Enemy_AI : MonoBehaviour
             }
             else
             {
+                //Resets timer and increases the float moveLoop. If moveLoop is equal to 2, the ship will move off screen, otherwise will loop back to movePattern 1.1f.
                 timer = 1f;
                 moveLoop++;
                 if(moveLoop == 2)
@@ -148,6 +156,7 @@ public class Enemy_AI : MonoBehaviour
 
     void Movement2()
     {
+        //Moves the ship down towards the player.
         if(movePattern == 2)
         {
             rb.velocity = transform.up * speed * Time.deltaTime;
@@ -156,6 +165,7 @@ public class Enemy_AI : MonoBehaviour
 
     void ShootTimer()
     {
+        //When the timer reaches/goes below 0, shoots.
         shootTime -= Time.deltaTime;
         if(shootTime < 0)
         {
@@ -179,7 +189,7 @@ public class Enemy_AI : MonoBehaviour
                     bullet.SetActive(true);
                 }
             }
-
+            //Resets shoot timer.
             shootTime = timeBTWShots;
         }
     }
@@ -196,6 +206,7 @@ public class Enemy_AI : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
+        //If the enemy is hit by any of the following object with the tag, sets death bool to true or sets the object to inactive in the case of the barrier.
         if (hitInfo.CompareTag("Player Bullets"))
         {
             if(death == false)
@@ -218,6 +229,8 @@ public class Enemy_AI : MonoBehaviour
 
     void MovementRandomizer()
     {
+        //Randomizers the movementPattern option if the enemy spawns on the other 2 spawn location otherwise sets it to the second movementPattern option.
+        //Randomizers the movementPattern option if the enemy spawns on the other 2 spawn location otherwise sets it to the second movementPattern option.
         int a = Random.Range(0, 3);
 
         if(spawnLoc == 0 || spawnLoc == 4)

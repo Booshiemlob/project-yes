@@ -10,10 +10,12 @@ public class Bullets : MonoBehaviour
 
     void OnEnable()
     {
+        //Resets timer on active.
         timer = 3f;
     }
     void Update()
     {
+        //When the timer goes below/reaches 0, sets the bullet inactive.
         timer -= Time.deltaTime;
         if (timer < 0)
         {
@@ -29,6 +31,7 @@ public class Bullets : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
+        //If the object has colliding with an object with the following tags, sets it inactive.
         if (hitInfo.CompareTag("Barrier"))
         {
             gameObject.SetActive(false);

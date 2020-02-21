@@ -14,6 +14,8 @@ public class BulletSplit : MonoBehaviour
 
     void OnEnable()
     {
+        //Resets the bullet on active.
+        //Chooses a random time to split.
         splitTime = Random.Range(0f, 2f);
         split = false;
     }
@@ -30,11 +32,13 @@ public class BulletSplit : MonoBehaviour
 
     void bulletMove()
     {
+        //Constantly moves the bullet in one direction, slowing down as until it splits.
         rb.velocity = transform.up * speed * Time.deltaTime * splitTime;
     }
 
     void bulletSplit()
     {
+        //When the splitTime reaches/goes below 0, spawns a bullet in each direction around the split bullet.
         splitTime -= Time.deltaTime;
         if (splitTime < 0)
         {
@@ -55,6 +59,7 @@ public class BulletSplit : MonoBehaviour
                     }
                 }
             }
+            //Same thing but for the milanHead.
             if( milanFactor == true)
             {
                 for (int i = 0; i < firePoint.Length; i++)
@@ -78,6 +83,7 @@ public class BulletSplit : MonoBehaviour
 
     void splitCheck()
     {
+        //Checks if it has split, if true sets it inactive.
         if(split == true)
         {
             gameObject.SetActive(false);
@@ -86,6 +92,7 @@ public class BulletSplit : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D hitInfo)
     {
+        //If the object has colliding with an object with the following tags, sets it inactive.
         if (hitInfo.CompareTag("Barrier"))
         {
             gameObject.SetActive(false);
