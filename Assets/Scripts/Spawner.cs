@@ -9,14 +9,18 @@ public class Spawner : MonoBehaviour
     private float currentSpawnTime;
     public int randSpawn;
     public GameObject MilanBoss;
-
+    public bool MilanCheck;
     public scoreTracker1 scores;
+    public Story storyCheck;
+
+
 
 
     void Start()
     {
         //Finds the score script that is attached to the object "score1".
         scores = GameObject.Find("score1").GetComponent<scoreTracker1>();
+        storyCheck = GameObject.Find("story").GetComponent<Story>();
         currentSpawnTime = spawnTimer;
     }
 
@@ -24,15 +28,16 @@ public class Spawner : MonoBehaviour
     void LateUpdate()
     {
         CheckSpawning();
-        MilanCheck();
+
     }
 
-    void MilanCheck()
+    void MilanSpawn()
     {
         //Spawns MilanHead when the score reaches 212.
-        if (scores.score2 > 212)
+        if (scores.score2 >= 212 && MilanCheck == false)
         {
             Instantiate(MilanBoss, spawnPoints[2].position, spawnPoints[2].rotation);
+            MilanCheck = true;
         }
     }
     
@@ -43,7 +48,7 @@ public class Spawner : MonoBehaviour
         //When the timer reaches/goes below zero calls the spawnEnemy function.
         if (currentSpawnTime <= 0)
         {
-            spawnEnemy();
+            storyPause();
         }
     }
 
@@ -60,5 +65,18 @@ public class Spawner : MonoBehaviour
             bullet.SetActive(true);
         }
         currentSpawnTime = spawnTimer;
+    }
+
+    void storyPause()
+    {
+        if(storyCheck.softPause == false)
+        {
+            spawnEnemy();
+            MilanSpawn();
+        }
+        else
+        {
+            return;
+        }
     }
 }

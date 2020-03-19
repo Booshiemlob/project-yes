@@ -15,7 +15,7 @@ public class milanBoss : MonoBehaviour
     public float timeBTWShots = 0.1f;
     public float shootTime;
     public int health = 212;
-
+    public Story storyComplete;
     public Transform playerShip;
     public Transform[] firePoint;
     public Transform angle2Player;
@@ -23,6 +23,7 @@ public class milanBoss : MonoBehaviour
     void Start()
     {
         shootTime = timeBTWShots;
+        storyComplete = GameObject.Find("story").GetComponent<Story>();
     }
 
     // Update is called once per frame
@@ -51,7 +52,7 @@ public class milanBoss : MonoBehaviour
             //If the timer is above 0, the boss moves down towards the player.
             if (timer > 0)
             {
-                rb.velocity = transform.up * -speed * Time.deltaTime * 10;
+                rb.velocity = transform.up * speed * Time.deltaTime * 10;
             }
             else
             {
@@ -264,6 +265,7 @@ public class milanBoss : MonoBehaviour
         //if health reaches or goes below 0 kills the milanHead
         if(health <= 0)
         {
+            storyComplete.dead = true;
             Destroy(this);
         }
     }

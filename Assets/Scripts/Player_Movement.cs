@@ -7,15 +7,19 @@ public class Player_Movement : MonoBehaviour
 {
     public float speed = 3.0f;
     public bool death = false;
+    public Story storyCheck;
     void Start()
     {
-
+        storyCheck = GameObject.Find("story").GetComponent<Story>();
     }
 
     void FixedUpdate()
     {
         //Movement();
-        TouchMovement();
+        if(storyCheck.pause == false)
+        {
+            TouchMovement();
+        }
     }
     void Update()
     {
